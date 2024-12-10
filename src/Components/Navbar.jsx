@@ -6,7 +6,7 @@ const Navbar = () => {
   return (
     <div className="w-full h-16 md:h-20 flex items-center justify-between">
       {/* LOGO */}
-      <a href="" className="font-bold">{`<AshBorea/>`}</a>
+      <a href="" className="font-bold text-2xl">{`<AshBorea/>`}</a>
       {/* Mobile Menu */}
       <div className="md:hidden">
         {/* MOBILE BUTTON */}
@@ -60,7 +60,7 @@ const Navbar = () => {
         </div>
       </div>
       {/* Desktop Menu */}
-      <div className="hidden md:flex items-center gap-8 xl:gap-12 font-medium">
+      <div className="hidden md:flex items-center gap-8 xl:gap-12">
         <a href="#" onClick={() => setOpen(false)}>
           Accueil
         </a>
