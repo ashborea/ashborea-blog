@@ -1,3 +1,4 @@
+import { SignedIn, SignedOut, SignOutButton } from "@clerk/clerk-react";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -51,14 +52,20 @@ const Navbar = () => {
           <Link to="#" onClick={() => setOpen(false)}>
             Contact
           </Link>
-          <Link to="#" onClick={() => setOpen(false)}>
-            Inscription
-          </Link>
-          <Link to="#" onClick={() => setOpen(false)}>
-            <button className="py-2 px-4 rounded-3xl bg-blue-800 text-white">
-              Connexion
-            </button>
-          </Link>
+
+          <SignedOut>
+            <Link to="/inscription" onClick={() => setOpen(false)}>
+              Inscription
+            </Link>
+            <Link to="/connexion" onClick={() => setOpen(false)}>
+              <button className="py-2 px-4 rounded-3xl bg-blue-800 text-white">
+                Connexion
+              </button>
+            </Link>
+          </SignedOut>
+          <SignedIn>
+            <SignOutButton />
+          </SignedIn>
         </div>
       </div>
       {/* Desktop Menu */}
@@ -72,14 +79,24 @@ const Navbar = () => {
         <Link to="#" onClick={() => setOpen(false)}>
           Contact
         </Link>
-        <Link to="#" onClick={() => setOpen(false)}>
-          Inscription
-        </Link>
-        <Link to="#" onClick={() => setOpen(false)}>
-          <button className="py-2 px-4 rounded-3xl bg-blue-800 text-white">
-            Connexion
-          </button>
-        </Link>
+        <SignedOut>
+          <Link to="/inscription" onClick={() => setOpen(false)}>
+            Inscription
+          </Link>
+          <Link to="/connexion" onClick={() => setOpen(false)}>
+            <button className="py-2 px-4 rounded-3xl bg-blue-800 text-white">
+              Connexion
+            </button>
+          </Link>
+        </SignedOut>
+        <SignedIn>
+          <Link to="/parametres">Paramètres</Link>
+          <SignOutButton>
+            <button className="py-2 px-4 rounded-3xl bg-blue-800 text-white">
+              Deconnexion
+            </button>
+          </SignOutButton>
+        </SignedIn>
       </div>
     </div>
   );
