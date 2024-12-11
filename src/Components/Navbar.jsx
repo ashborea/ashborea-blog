@@ -53,14 +53,21 @@ const Navbar = () => {
           <Link to="/" onClick={() => setOpen(false)}>
             Contact
           </Link>
-          <Link to="/signup" onClick={() => setOpen(false)}>
-            Inscription
-          </Link>
-          <Link to="/login" onClick={() => setOpen(false)}>
-            <button className="py-2 px-4 rounded-3xl bg-blue-800 text-white">
-              Connexion
-            </button>
-          </Link>
+
+          <SignedOut>
+            <Link to="/signup" onClick={() => setOpen(false)}>
+              Inscription
+            </Link>
+            <Link to="/login" onClick={() => setOpen(false)}>
+              <button className="py-2 px-4 rounded-3xl bg-blue-800 text-white">
+                Connexion
+              </button>
+            </Link>
+          </SignedOut>
+
+          <SignedIn>
+            <UserButton />
+          </SignedIn>
         </div>
       </div>
       {/* DESKTOP MENU */}
@@ -74,14 +81,18 @@ const Navbar = () => {
         <Link to="/" onClick={() => setOpen(false)}>
           Contact
         </Link>
-        <Link to="/signup" onClick={() => setOpen(false)}>
-          Inscription
-        </Link>
-        <Link to="/login" onClick={() => setOpen(false)}>
-          <button className="py-2 px-4 rounded-3xl bg-blue-800 text-white">
-            Connexion
-          </button>
-        </Link>
+
+        <SignedOut>
+          <Link to="/signup" onClick={() => setOpen(false)}>
+            Inscription
+          </Link>
+          <Link to="/login" onClick={() => setOpen(false)}>
+            <button className="py-2 px-4 rounded-3xl bg-blue-800 text-white">
+              Connexion
+            </button>
+          </Link>
+        </SignedOut>
+
         <SignedIn>
           <UserButton />
         </SignedIn>
