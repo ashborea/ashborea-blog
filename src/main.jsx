@@ -18,14 +18,22 @@ if (!PUBLISHABLE_KEY) {
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <ClerkProvider publishableKey={PUBLISHABLE_KEY} localization={frFR}>
+    <ClerkProvider
+      publishableKey={PUBLISHABLE_KEY}
+      localization={frFR}
+      appearance={{
+        layout: {
+          unsafe_disableDevelopmentModeWarnings: true,
+        },
+      }}
+    >
       <BrowserRouter>
         <Routes>
           <Route element={<MainLayout />}>
             <Route index element={<HomePage />} />
             <Route path="single-article" element={<SingleArticle />} />
-            <Route path="/connexion" element={<Login />} />
-            <Route path="/inscription" element={<Register />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Register />} />
           </Route>
         </Routes>
       </BrowserRouter>
