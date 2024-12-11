@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -6,7 +7,9 @@ const Navbar = () => {
   return (
     <div className="w-full h-16 md:h-20 flex items-center justify-between">
       {/* LOGO */}
-      <a href="" className="font-bold text-2xl">{`<AshBorea/>`}</a>
+      <Link to="/" className="font-bold text-2xl">
+        {`<AshBorea/>`}
+      </Link>
       {/* Mobile Menu */}
       <div className="md:hidden">
         {/* MOBILE BUTTON */}
@@ -15,7 +18,6 @@ const Navbar = () => {
           onClick={() => setOpen((prev) => !prev)}
         >
           {/* Change Hamburger Icon */}
-          {/* {open ? "X" : "☰"} */}
           <div className="flex flex-col gap-[5.4px]">
             <div
               className={`h-[3px] rounded-md w-6 bg-black origin-left transition-all ease-in-out ${
@@ -40,44 +42,44 @@ const Navbar = () => {
             open ? "-right-0" : "-right-[100%]"
           }`}
         >
-          <a href="#" onClick={() => setOpen(false)}>
+          <Link to="#" onClick={() => setOpen(false)}>
             Accueil
-          </a>
-          <a href="#" onClick={() => setOpen(false)}>
+          </Link>
+          <Link to="#" onClick={() => setOpen(false)}>
             A Propos
-          </a>
-          <a href="#" onClick={() => setOpen(false)}>
+          </Link>
+          <Link to="#" onClick={() => setOpen(false)}>
             Contact
-          </a>
-          <a href="#" onClick={() => setOpen(false)}>
+          </Link>
+          <Link to="#" onClick={() => setOpen(false)}>
             Inscription
-          </a>
-          <a href="#" onClick={() => setOpen(false)}>
+          </Link>
+          <Link to="#" onClick={() => setOpen(false)}>
             <button className="py-2 px-4 rounded-3xl bg-blue-800 text-white">
               Connexion
             </button>
-          </a>
+          </Link>
         </div>
       </div>
       {/* Desktop Menu */}
       <div className="hidden md:flex items-center gap-8 xl:gap-12">
-        <a href="#" onClick={() => setOpen(false)}>
+        <Link to="#" onClick={() => setOpen(false)}>
           Accueil
-        </a>
-        <a href="#" onClick={() => setOpen(false)}>
+        </Link>
+        <Link to="#" onClick={() => setOpen(false)}>
           A Propos
-        </a>
-        <a href="#" onClick={() => setOpen(false)}>
+        </Link>
+        <Link to="#" onClick={() => setOpen(false)}>
           Contact
-        </a>
-        <a href="#" onClick={() => setOpen(false)}>
+        </Link>
+        <Link to="#" onClick={() => setOpen(false)}>
           Inscription
-        </a>
-        <a href="#" onClick={() => setOpen(false)}>
+        </Link>
+        <Link to="#" onClick={() => setOpen(false)}>
           <button className="py-2 px-4 rounded-3xl bg-blue-800 text-white">
             Connexion
           </button>
-        </a>
+        </Link>
       </div>
     </div>
   );
