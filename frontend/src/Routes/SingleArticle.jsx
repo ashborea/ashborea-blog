@@ -2,6 +2,7 @@ import React from "react";
 import Image from "../Components/Image";
 import { Link } from "react-router-dom";
 import CategoriesNav from "../Components/CategoriesNav";
+import Comments from "../Components/Comments";
 
 const SingleArticle = () => {
   return (
@@ -38,6 +39,8 @@ const SingleArticle = () => {
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur nobis nesciunt nemo rerum officia repudiandae, temporibus nisi omnis id doloremque. Modi vero dolorem deserunt provident ratione nemo itaque illum reprehenderit. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos eaque perspiciatis, exercitationem quidem itaque magni architecto voluptatum deserunt distinctio beatae aspernatur, nesciunt voluptate repellendus maxime, quia dicta a! Officiis, expedita. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab atque fuga cumque nulla aut perferendis at impedit, natus minus, nisi facere! Voluptates eum similique officiis, cum nisi magni officia quos?</p>
         </div>
       </div>
+
+      <Comments />
     </div>
 
   );
