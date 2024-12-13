@@ -9,6 +9,8 @@ import Register from "./Routes/Register.jsx";
 import { ClerkProvider } from "@clerk/clerk-react";
 import { frFR } from "@clerk/localizations";
 import Login from "./Routes/Login.jsx";
+import WriteArticle from "./Routes/WriteArticle.jsx";
+import ArticlePage from "./Routes/ArticlePage.jsx";
 
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 
@@ -31,10 +33,11 @@ createRoot(document.getElementById("root")).render(
         <Routes>
           <Route element={<MainLayout />}>
             <Route index element={<HomePage />} />
-            <Route path="single-article" element={<SingleArticle />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Register />} />
             <Route path="/:slug" element={<SingleArticle />} />
+            <Route path="/write-article" element={<WriteArticle />} />
+            <Route path="/article" element={<ArticlePage />} />
           </Route>
         </Routes>
       </BrowserRouter>
