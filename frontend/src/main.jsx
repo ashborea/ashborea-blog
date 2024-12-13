@@ -34,6 +34,7 @@ createRoot(document.getElementById("root")).render(
             <Route path="single-article" element={<SingleArticle />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Register />} />
+            <Route path="/:slug" element={<SingleArticle />} />
           </Route>
         </Routes>
       </BrowserRouter>
